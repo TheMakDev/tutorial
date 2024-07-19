@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PETERPAN IT SOLUTIONS</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="index.js"></script>
+</head>
+<body>
+    <div class="container">
+        <nav>
+            <ul class="sidebar">
+                <li onclick="hideSidebar()"><a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="26px" viewBox="0 -960 960 960" width="26px" fill="blue"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg></a></li>
+                <li><a href="index.html">HOME</a></li>
+                <li><a href="who we are.html">WHO WE ARE</a></li>
+                <li><a href="tech.html">TECH BLOG</a></li>
+                <li><a href="contact.html">CONTACT</a></li>
+                <li id="porfilio"><a href="portfilio.html"><span>Portfilio</span></a></li>
+            </ul>
+            <ul>
+                <img src="peterpan_logo_55px.png" alt="" class="logo">
+                <li class="hideOnMobile"><a href="index.html">HOME</a></li>
+                <li class="hideOnMobile"><a href="who we are.html">WHO WE ARE</a></li>
+                <li class="hideOnMobile"><a href="tech.html">TECH BLOG</a></li>
+                <li class="hideOnMobile"><a href="contact.html">CONTACT</a></li>
+                <li class="hideOnMobile" id="porfilio"><a href="portfilio.html"><span>Portfilio</span></a></li>
+                <li class="menu-button" onclick="showSidebar()"><a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="26px" viewBox="0 -960 960 960" width="24px" fill="blue"><path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg></a></li>
+            </ul>
+        </nav>
+
+       
+       <section class="article">
+        <div class="tech-container">
+
+            <div class="tech-box">
+                <img src="apache.jpg" alt="">
+                <h2>How To Install Apache</h2>
+                <p>nstall the MySQL database server on your PC. We will do this using the 'MSI' one-click installer for Windows. Go to http://dev.mysql.com/downloads/and download the 'MySQL Installer for Windows'. At the time of writing this was from a very obvious graphic at the top of the screen (which I missed the first time).</p>
+                <ul>
+                    <li>Install the MySQL database server on your PC. We will do this using the 'MSI' one-click installer for Windows. Go to http://dev.mysql.com/downloads/and download the 'MySQL Installer for Windows'. At the time of writing this was from a very obvious graphic at the top of the screen (which I missed the first time).
+                    </li>
+                    <li>Run the installation. Click...</li>
+                    <li>Install MySQL products</li>
+                    <li>Accept the license</li>
+                    <li>Allow the version check (optional)</li>
+                    <li>At 'Choose a Setup Type' accept the "Developer Default" and click Next</li>
+                    </ul>
+                <div id="hiddenText">
+                    <ul>
+                    <li>A number of downloads of required software may be identified. Click Execute and follow onscreen instructions to install them.</li>
+                    <li>A number of downloads of required software may be identified. Click Execute and follow onscreen instructions to install them.</li>
+                    <li>At 'Configuration overview' hit Next to go to the basic configuration screen.</li>
+                    <li>Accept all the defaults on the 'MySQL Server Configuration' and hit Next.</li>
+                    <li>On the password screen, supply a password for the 'root' (main administrator) user. Make sure it's one you won't forget. You can also create a 'User' account just for Moodle with more restricted access if you like. This would be good practice on a public server but just using the 'root' user will suffice for testing.</li>
+                    <li>On the Service details page, accept the defaults and hit Next and then Next a couple more times for the configuration progress.</li>
+                    <li>Click Finish. Job done.</li>
+                    <li>MySQL Workbench will open. Under Server Administration (right hand column, double click 'Local MySQL56' (or whatever you called it). A box should pop up asking for the root password. Enter the password you supplied</li>
+                    <li>The server management screen should appear. You don't have to worry too much about this. It just shows the install is working.</li>
+                </ul>
+                <p>Step 2: Install Apache</p>
+                <ul>
+                    <li>Install the Apache web server on your PC. Go to http://www.apachelounge.com/download/. Scroll down the page until you find the download for the 'Apache 2.4 win32 binaries' and download. You need to be careful that the module dll in PHP matches the version of Apache you install. Apache won't load otherwise.
+                    </li>
+                    <li>Unzip the file into C:\. You should end up with a directory 'Apache24' (or whatever the latest version is).</li>
+                    <li>Find Start > All programs > Accessories > Command Prompt...... BUT, right click, and select 'Run as administrator'.</li>
+                    <li>Enter the following commands
+                        cd \Apache24\bin   httpd -k install   httpd -k start...you may well get a warning about the server name. Don't worry about it. Don't close this window, you will need it again in a minute.</li>
+                    <li>To test it worked type 'http://localhost'into your browser. You should get a screen up to the effect that Apache is installed and working.</li>
+                </ul>
+                <p>Step 3: Install PHP</p>
+                <ul>
+                    <li>Now install the PHP scripting language on your PC. Go to http://www.php.net/download. In the current stable release section click on link for Windows 5.x.x binaries and source. Scroll down to the newest 'Zip' for VC14 x86 Thread Safe(non thread safe doesn't have the Apache dll. the VC version may be different, and you may need x64 version) PHP (again, the newest versions of PHP didn't have this but it shouldn't matter) and download. *Don't* be tempted to use the Microsoft Installer version; it won't work.</li>
+                    <li>Open the zip file and extract to C:\PHP\</li>
+                    <li>In a console window, type php -v to see if it worked. (You may need to set up your PATH. Alos, if you get weired error messages, or no error messages at all, read the bit on the left of http://windows.php.net/where it talks about installing "C++ Redistributable for Visual Studio")</li>
+                </ul>
+                <p>Step 4: Configure Apache and PHPYou now need to edit Apache's httpd.conf file. In the file explorer navigate to C:\Apache24\conf\httpd.conf. Open it in Notepad . At the end of this file (or wherever you like if you want to be more organised) add the following lines:   LoadModule php5_module "C:/PHP/php5apache2_4.dll"   AddHandler application/x-httpd-php .php   PHPIniDir C:/PHPThe version of the module file matters (2_4 in this case). It MUST match the Apache version installed.In the same file. Search for the line starting DirectoryIndex. Change it as follows   DirectoryIndex index.php index.htmlNow, navigate to C:\PHP, and copy php.ini-development to php.ini. Edit this file, find the following lines and modify them as follows (all should exist already):   memory_limit = 256M   post_max_size = 128M   upload_max_filesize = 128MYou need to specify the extensions required for Moodle. Find the 'Dynamic Extensions' section and change the following lines (uncomment and add the correct path):   extension=c:/php/ext/php_curl.dll   extension=c:/php/ext/php_gd2.dll   extension=c:/php/ext/php_intl.dll   extension=c:/php/ext/php_mbstring.dll   extension=c:/php/ext/php_mysqli.dll   extension=c:/php/ext/php_openssl.dll   extension=c:/php/ext/php_soap.dll   extension=c:/php/ext/php_xmlrpc.dll(these are a minimum. You may need others - e.g. LDAP - for specific functions) ...and save.Back in the 'cmd' window for Apache, you need to restart it to load your changes...   httpd -k restartStep 5: Test your installNavigate to C:\Apache24\htdocs and create a file called 'test.php'. I had to change a file explorer setting to create .php files - Organise > Folder and search options > View and then untick 'Hide extensions for known file types'.In this file enter the single line...   <?php phpinfo();And then, in your browser, navigate to http://localhost/test.php. You should see a screen with masses of information and the PHP logo at the top. Check a few lines down for 'Loaded Configuration File' and make sure it says c:\php\php.ini.That's PHP and Apache all working :)Step 6: Install GitWe will use the Git version control system for loading and updating the Moodle software. If you really don't want to do this you can just download the latest Moodle zip file and unzip it in c:\Apache24\htdocs but Git makes updates MUCH easier. We need to install Git first...</p>
+                <ul>
+                    <li>Go to http://msysgit.github.com. Navigate to 'Downloads' and download/run the latest installer.</li>
+                    <li>Accept defaults until you get to 'Adjusting your PATH environment'. Select 'Run Git from the Windows Command Prompt' at this point.
+                    </li>
+                    <li>Accept remaining defaults and install</li>
+                    <li>If you right click on folders in the file explorer you should now see additional Git commands.</li>
+                </ul>
+            </div>
+                <button onclick="btn()" id="btn" class="btn">Read More....</button>
+                <button onclick="showBtn()" id="show-btn" class="btn">Read less...</button>
+            </div>
+            <!-- second box -->
+            <div class="tech-box">
+                <img src="server.jpg" alt="">
+                <h2>Windows Server: How To Repair The Boot Files</h2>
+                <p>This article deals with a problem in the boot files and demonstrates how to repair them. IntroductionWhen booting to the Windows Recovery Environment (WinRE), the drive letters are assigned on a first-come, first-serve basis. For example, the C: drive in Windows will often have a different letter in WinRE. The DiskPart utility can be used to keep track of the drives and what is stored on them. <br>This article deals with a problem in the boot files and demonstrates how to repair them. IntroductionWhen booting to the Windows Recovery Environment (WinRE), the drive letters are assigned on a first-come, first-serve basis. For example, the C: drive in Windows will often have a different letter in WinRE. The DiskPart utility can be used to keep track of the drives and what is stored on them.</p>
+                <ul>
+                    <li>First Partition: 100 MB System Reserved (No drive letter)
+                    </li>
+                </ul>
+                <div id="hiddenTexts">
+                    <li>Second Partition: 60 GB (C:) OS</li>
+                    <li>Third Partition: 1.5 TB (D:) Data</li>
+                    <li>DVD Drive: E:</li>
+                    <p>Figure 1: Illustration of Drive lettering in Windows and WinRE (English only)Note: If there is no System Reserved partition. It is okay to select the drive containing the Windows folder. Restoring Boot Files</p>
+                
+                    <ul><li>Boot to the Windows Server DVD.</li>
+                        <li>Open the command prompt.</li>
+                        <li>Server 2008 R2:
+                        </li>
+                        <li>If no driver is needed, press Shift-F10 to open the command prompt.</li>
+                        <li>Continue with step 3.</li>
+                        <li>Server 2008 (or 2008 R2 if a driver is required)</li>
+                        <li>Click Next at the first screen.</li>
+                        <li>Click Repair your computer.</li>
+                        <li>Click Finish. Job done.</li>
+                        <li>If no driver is needed, click Next and proceed to step vii below</li>
+                        <li>If a driver is needed, click Load Drivers.
+                        </li>
+                        <li>Insert the media containing the needed driver.</li>
+                    </ul>
+                    <p>Note: The media can be a CD, DVD, or USB storage device</p>
+                    <ul>
+                        <li>Navigate to the folder containing the driver, select it, and click Open.
+                        </li>
+                        <li>Click Command Prompt.</li>
+                        <li>The command prompt appears.</li>
+                        <li>Type DiskPartat the command prompt. Figure 2: DiskPart result (english only)</li>
+                        <li>TypeList vol at the DiskPart prompt.</li>
+                        <li>Write down the drive letter of the DVD drive. In this example, it is F.</li>
+                        <li>Write down the drive letter of the system reserved drive. In this example, it is C.</li>
+                        <li>Type Select vol 1 (assuming volume 1 is the System Reserved volume, as it is here).</li>
+                        <li>Type active. This sets the selected volume as active.</li>
+                        <li>Type exit to return to the command line.</li>
+                        <li>TypeCopy f:\BootMgr c:\ at the command prompt. One of two things will happen:</li>
+                        <li>If the file Bootmgr already exists on C:, type Nto avoid overwriting it.</li>
+                        <li>If the file Bootmgr doesn't already exist on C:, it will automatically be copied.</li>
+                        <li>Type Bootrec /Fixmbr at the command prompt.</li>
+                        <li>Type Bootrec /Fixboot at the command prompt.</li>
+                        <li>Type Bootrec /rebuildBCDat the command prompt.
+                        </li>
+                        <li>If no OS is found, the following appears: Figure 3: Result when no OS is found (English only) This means that one of the following is true:</li>
+                        <li>The boot configuration database (BCD) already exists.
+                        </li>
+                        <li>The OS is not there.</li>
+                        <li>The OS is damaged beyond the ability of BootRec to recognize it.</li>
+                        <li>If BootRec /RebuildBCDsucceeds, it will list any installations of Windows that it found. Press Y to accept and add them to the BCD.</li>
+                        <li>The server is now configured to boot from the proper partition. Close the command prompt and reboot the system into normal mode.</li>
+                    </ul>  
+                </div>
+                <button onclick="btns()" id="btns" class="btns">Read More....</button>
+                <button onclick="showBtns()" id="show-btns" class="btns">Read less...</button>
+                </div>
+                
+            
+        </div>
+       </section>
+
+       <section id="contact-section">
+        <h3>Do You Need A Reliable Team</h3>
+        <p>Our team does everything they can to ensure a 99.9% success
+            rate on all projects we are involved in</p>
+        <button><a href="contact.html">Contact us Today</a></button>
+   </section>
+       <footer>
+        <div class="footer-content">
+            <img src="peterpan_logo_55px.png" alt="" class="flogo">
+            <div class="social-icons">
+                <a href="#" target="_blank"><img src="youtube-logo-svgrepo-com.svg" alt=""></a>
+                <a href="#" target="_blank"><img src="facebook-logo-svgrepo-com.svg" alt=""></a>
+                <a href="#" target="_blank"><img src="twitter-logo-bold-svgrepo-com.svg" alt=""></a>
+            </div>
+            <p>&copy;PETERPAN IT SOLUTIONS. All rights reserved.</p>
+        </div>
+    </footer>
+    </div>
+</body>
+</html>

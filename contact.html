@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PETERPAN IT SOLUTIONS</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="index.js"></script>
+</head>
+<body>
+    <div class="container">
+        <nav>
+            <ul class="sidebar">
+                <li onclick="hideSidebar()"><a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="26px" viewBox="0 -960 960 960" width="26px" fill="blue"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg></a></li>
+                <li><a href="index.html">HOME</a></li>
+                <li><a href="who we are.html">WHO WE ARE</a></li>
+                <li><a href="tech.html">TECH BLOG</a></li>
+                <li><a href="contact.html">CONTACT</a></li>
+                <li id="porfilio"><a href="portfilio.html"><span>Portfilio</span></a></li>
+            </ul>
+            <ul>
+                <img src="peterpan_logo_55px.png" alt="" class="logo">
+                <li class="hideOnMobile"><a href="index.html">HOME</a></li>
+                <li class="hideOnMobile"><a href="who we are.html">WHO WE ARE</a></li>
+                <li class="hideOnMobile"><a href="tech.html">TECH BLOG</a></li>
+                <li class="hideOnMobile"><a href="contact.html">CONTACT</a></li>
+                <li class="hideOnMobile" id="porfilio"><a href="portfilio.html"><span>Portfilio</span></a></li>
+                <li class="menu-button" onclick="showSidebar()"><a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="26px" viewBox="0 -960 960 960" width="24px" fill="blue"><path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg></a></li>
+            </ul>
+        </nav>
+        <div class="contact-body">
+        <div class="contact-container">
+        <div class="contact-form">
+            <h1>Contact Us</h1>
+            <p>Feel free to contact us any time. We will get back to you as soon as we can</p>
+            <form action="" method="post">
+                <input type="text" name="name" placeholder="Name" required>
+            <input type="email" name="email" placeholder="Email" required>
+            <textarea name="message" placeholder="Message" cols="30" rows="5"></textarea>
+            <button type="submit">Send</button>
+            </form>
+        </div>
+
+        <div class="contact-info">
+            <h2>Info</h2>
+            <div class="info-item"><i class="fa fa-envelope"></i></div><span>info@peterpanng.com</span>
+            <div class="info-item"><i class="fa fa-phone"></i></div><span> +234 703 9237 226</span>
+            <div class="info-item"><i class="fa fa-map-marker"></i></div><span>Kaduna,Port-Harcourt,Ogbomoso</span>
+            <div class="info-item"><i class="fa fa-clock-o"></i></div><span>09:00am - 6:00pm</span>
+        </div>
+    </div>
+</div>
+    <footer>
+        <div class="footer-content">
+            <img src="peterpan_logo_55px.png" alt="" class="flogo">
+            <div class="social-icons">
+                <a href="#" target="_blank"><img src="youtube-logo-svgrepo-com.svg" alt=""></a>
+                <a href="#" target="_blank"><img src="facebook-logo-svgrepo-com.svg" alt=""></a>
+                <a href="#" target="_blank"><img src="twitter-logo-bold-svgrepo-com.svg" alt=""></a>
+            </div>
+            <p>&copy;PETERPAN IT SOLUTIONS. All rights reserved.</p>
+        </div>
+    </footer>
+    </div>
+</body>
+</html>
